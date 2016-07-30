@@ -39,7 +39,7 @@ class Synthesizer implements SynthesizerContract {
     }
 
     /**
-     * Synthesizes the given text
+     * Synthesizes text
      *
      * @param string $part
      * @param array|string $filters

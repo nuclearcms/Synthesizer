@@ -195,11 +195,11 @@ class DocumentsProcessor implements Processor {
         $caption = ($translation) ? $translation->caption : '';
         $description = ($translation) ? $translation->description : '';
 
-        return '<li>
+        return '<li class="gallery__item">
             <figure data-original="' . $image->getPublicURL() . '">' .
-        $image->present()->thumbnail .
-        '<figcaption class="gallery-caption">' . $caption . '</figcaption>
-                <p class="gallery-description">' . $description . '</p>
+                $image->present()->thumbnail .
+                '<figcaption class="gallery-thumbnail__caption">' . $caption . '</figcaption>
+                    <p class="gallery-thumbnail__description">' . $description . '</p>
             </figure>
         </li>';
     }
@@ -212,6 +212,6 @@ class DocumentsProcessor implements Processor {
      */
     protected function wrapSlidesHTML($slides)
     {
-        return '<ul class="gallery-inline gallery-lightbox">' . $slides . '</ul>';
+        return '<ul class="gallery--inline gallery--lightbox">' . $slides . '</ul>';
     }
 }
