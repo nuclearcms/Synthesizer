@@ -1,0 +1,45 @@
+{
+    "name": "nuclear/synthesizer",
+    "description": "The markdown and text processor that Nuclear CMS needs.",
+    "license": "MIT",
+    "keywords": [
+        "kenarkose",
+        "nuclear",
+        "nuclearcms",
+        "synthesizer",
+        "markdown",
+        "laravel",
+        "laravel5"
+    ],
+    "version": "0.9.0",
+    "authors": [
+        {
+            "name": "Hyleeh",
+            "email": "egemen@kenarkose.com",
+            "homepage": "http://egemenkizilcan.com",
+            "role": "Developer / Designer"
+        }
+    ],
+    "require": {
+        "php": ">=5.5.9",
+        "erusev/parsedown-extra": "~0.7"
+    },
+    "require-dev": {
+        "orchestra/testbench": "~3.2",
+        "phpunit/phpunit": "~4.0",
+        "nuclear/documents": "~0.9"
+    },
+    "autoload": {
+        "psr-4": {
+            "Nuclear\\Synthesizer\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "classmap": [
+            "tests"
+        ]
+    },
+    "suggest": {
+        "laravel/framework": "This package requires Laravel 5."
+    }
+}
