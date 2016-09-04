@@ -50,7 +50,7 @@ class MarkdownProcessor extends ParsedownExtra implements Processor {
      */
     protected function inlineSubscript($Excerpt)
     {
-        if ($Excerpt['text'][0] === '~' and preg_match('/^[~]((?:\\\\\~|[^~])+?)[~](?![~])/', $Excerpt['text'], $matches))
+        if ($Excerpt['text'][0] === '~' and preg_match('/^[~]((?:\\\\\~|[^~\n\r])+?)[~](?![~])/', $Excerpt['text'], $matches))
         {
             return array(
                 'extent' => strlen($matches[0]),
@@ -71,7 +71,7 @@ class MarkdownProcessor extends ParsedownExtra implements Processor {
      */
     protected function inlineSuperscript($Excerpt)
     {
-        if ($Excerpt['text'][0] === '^' and preg_match('/^[\^]((?:\\\\\^|[^\^])+?)[\^](?![\^])/', $Excerpt['text'], $matches))
+        if ($Excerpt['text'][0] === '^' and preg_match('/^[\^]((?:\\\\\^|[^\^\n\r])+?)[\^]/', $Excerpt['text'], $matches))
         {
             return array(
                 'extent' => strlen($matches[0]),
