@@ -8,7 +8,7 @@ use Illuminate\Support\ServiceProvider;
 
 class SynthesizerServiceProvider extends ServiceProvider {
 
-    const version = '0.9.2';
+    const version = '0.9.3';
 
     /**
      * Indicates if loading of the provider is deferred.

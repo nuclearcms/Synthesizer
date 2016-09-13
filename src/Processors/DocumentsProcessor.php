@@ -4,7 +4,9 @@
 namespace Nuclear\Synthesizer\Processors;
 
 
+use Illuminate\Database\Eloquent\Collection;
 use Nuclear\Documents\Contract\Repositories\DocumentsRepository;
+use Nuclear\Documents\Media\Image;
 
 class DocumentsProcessor implements Processor {
 
@@ -150,7 +152,7 @@ class DocumentsProcessor implements Processor {
     {
         foreach ($idSets as $key => $ids)
         {
-            $slides = get_reactor_gallery($ids);
+            $slides = get_nuclear_gallery($ids);
 
             $gallery = (count($slides)) ? $this->makeGalleryHTML($slides) : '';
 
