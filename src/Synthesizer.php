@@ -50,10 +50,15 @@ class Synthesizer implements SynthesizerContract {
     {
         $text = $this->splitText($part);
 
+        if (empty($text))
+        {
+            return '';
+        }
+
         $text = $this->documentsProcessor->process($text, $args);
         $text = $this->markdownProcessor->process($text, $args);
 
-        if (! is_array($filters))
+        if ( ! is_array($filters))
         {
             $filters = [$filters];
         }
@@ -72,6 +77,11 @@ class Synthesizer implements SynthesizerContract {
         if ($part === 'before' || $part === 'rest')
         {
             $parts = explode(static::separator, $this->text);
+
+            if (count($parts) === 1 && $part === 'rest')
+            {
+                return null;
+            }
 
             return ($part === 'before') ? current($parts) : end($parts);
         }
